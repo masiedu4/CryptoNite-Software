@@ -58,7 +58,7 @@ export default function Coin({
                         {priceChange.toFixed(2)}%{" "}
                       </p>
                     ) : (
-                      <p className="text-green-700 whitespace-nowrap">
+                      <p className="text-green-800 whitespace-nowrap">
                         {priceChange.toFixed(2)}%{" "}
                       </p>
                     )}
