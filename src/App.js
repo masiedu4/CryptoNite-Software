@@ -1,6 +1,18 @@
+/**
+ * @description      :
+ * @author           : Michael
+ * @group            :
+ * @created          : 28/09/2021 - 12:50:33
+ *
+ * MODIFICATION LOG
+ * - Version         : 1.0.0
+ * - Date            : 28/09/2021
+ * - Author          : Michael
+ * - Modification    :
+ **/
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styles.css";
+import Header  from "./Header";
 import Coin from "./Coin";
 
 export default function App() {
@@ -36,34 +48,68 @@ export default function App() {
   );
 
   return (
-    <div className="coin-app">
-      <div className="coin-search">
-        <h1 className="coin-text"> CryptoNite</h1>
-        <p className="coin-text-2"> Made with 💛 by Michael</p>
-        <form>
-          <input
-            className="coin-input"
-            onChange={handleChange}
-            type="text"
-            placeholder="Search"
-            value={search}
-          />
-        </form>
-      </div>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            symbol={coin.symbol}
-            image={coin.image}
-            volume={coin.total_volume}
-            price={coin.current_price}
-            priceChange={coin.price_change_percentage_24h}
-            marketcap={coin.market_cap}
-          />
-        );
-      })}
-    </div>
-  );
-}
+    <div className="m-10"> 
+    
+     <Header search={search} handleChange={handleChange}/>
+        
+          <div class="container mx-auto px-4 sm:px-8 max-w-3xl">
+            <div class="py-8">
+              <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                <div class="inline-block sm:min-w-full shadow rounded-lg overflow-hidden">
+                  <div class="sm:min-w-full leading-normal">
+                    <thead>
+                      <tr class="sm:table-row">
+                        <th
+                          scope="col"
+                          class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                        >
+                          Currency
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                        >
+                          Current Price
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                        >
+                          Circulating Volume
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                        >
+                          Price Change
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                        >
+                          Market Cap
+                        </th>
+                      </tr>
+                    </thead>
+ {filteredCoins.map((coin) => ( 
+                    <Coin
+                      key={coin.id}
+                      name={coin.name}
+                      symbol={coin.symbol}
+                      image={coin.image}
+                      volume={coin.total_volume}
+                      price={coin.current_price}
+                      priceChange={coin.price_change_percentage_24h}
+                      marketcap={coin.market_cap}
+                    />
+  ))} 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+</div>
+
+  ); 
+ }
