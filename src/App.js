@@ -48,7 +48,7 @@ export default function App() {
   );
 
   return (
-    <div className="m-10"> 
+    <div className="m-10 sm:m-5"> 
     
      <Header search={search} handleChange={handleChange}/>
         
