@@ -14,6 +14,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header  from "./Header";
 import Coin from "./Coin";
+import FadeIn from "react-fade-in/lib/FadeIn";
+
 
 export default function App() {
   const [coins, setCoins] = useState([]);
@@ -48,9 +50,10 @@ export default function App() {
   );
 
   return (
+<FadeIn> 
     <div className="m-10 sm:m-5"> 
-    
-     <Header search={search} handleChange={handleChange}/>
+      
+     <Header search={search} handleChange={handleChange}/> 
         
           <div class="container mx-auto px-4 sm:px-8 max-w-3xl">
             <div class="py-8">
@@ -110,6 +113,6 @@ export default function App() {
           </div>
         
 </div>
-
+</FadeIn>
   ); 
  }
