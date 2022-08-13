@@ -11,13 +11,14 @@
  * - Modification    :
  **/
 import React from "react";
+
 const style = {
   wrapper: "m-5 border border-header p-2 rounded-md",
-  wrapperB: "flex justify-evenly",
-  image: "mx-auto object-cover rounded-full h-6 w-6 ",
+  wrapperB: "flex justify-evenly justify-center",
+  image: "mx-auto object-cover rounded-full h-6 w-6 mr-1 ",
   lowPriceChangeText: "text-red-500 whitespace-nowrap font-semibold",
   highPriceChangeText: "text-green-500 whitespace-nowrap font-semibold",
-  text: "text-gray-600 whitespace-nowrap font-semibold",
+  text: "leading-loose text-sm text-gray-600 whitespace-nowrap font-semibold",
 };
 
 export default function Coin({
