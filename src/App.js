@@ -13,7 +13,6 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Coin from "./Coin";
-import FadeIn from "react-fade-in/lib/FadeIn";
 import apiData from "./hooks/Data";
 
 export default function App() {
@@ -34,9 +33,9 @@ export default function App() {
   );
 
   return (
-    <div className="m-10 sm:m-5">
+    <div className="mx-auto sm:m-5">
       <Header search={search} handleChange={handleChange} />
-      <div className="flex mt-10">
+      <div className="flex flex-wrap mt-10 justify-center">
         {filteredCoins.map((coin) => (
           <Coin
             key={coin.id}
