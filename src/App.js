@@ -13,20 +13,16 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Coin from "./Coin";
-import apiData from "./hooks/Data";
+import { Data } from "./hoc/Data";
 
-export default function App() {
-  const { coins } = apiData();
+// wrapping App/ importing coins from a HOC
 
+const App = Data(({ coins }) => {
   const [search, setSearch] = useState("");
-
-  // set search when input it filtered
 
   function handleChange(event) {
     setSearch(event.target.value);
   }
-
-  // filter search keyword from api data
 
   const filteredCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
@@ -51,4 +47,6 @@ export default function App() {
       </div>
     </div>
   );
-}
+});
+
+export default App;
